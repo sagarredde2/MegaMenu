@@ -42,10 +42,11 @@ const MegaMenu = ({ links }) => {
             key={index}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
+            style={{position: 'relative'}}
           >
             <MegaMenuLink href={link.url}>{link.text}</MegaMenuLink>
             {hoveredIndex === index && (
-                <ul>
+                <ul style={{ position: 'absolute', top: '100%', left: '0'}}>
                   {link.subMenu.map((subLink, subIndex) => (
                     <li key={subIndex}>
                       <MegaMenuLink href={subLink.url}>
